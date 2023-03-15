@@ -47,7 +47,6 @@ void main(void){
 	mouseinit();
 	while(1)
 	{
-		delay(50);
 		newmouse(&MouseX,&MouseY,&press);
 		if (mouse_press(378,86,538,159)==2&& flag1 ==0)//虽然原本buttonh1函数内已有if检测鼠标位置，但由于下拉式菜单的后续选项也需要if检测鼠标位置后才显示，故这里再套了一层if。（可能是目前bug的原因之一）
 		{
@@ -69,16 +68,16 @@ void main(void){
 			buttonhl(590,104,738,156,LB,DB,600,114,"院校特色",32,32,&flag2);
 			/*第二个下拉式菜单*/
 			xiala2();
-			buttonhl(590,156,738,198,LB,DB,620,161,"九八五",32,32,&flag21);
-         	buttonhl(590,198,738,240,LB,DB,620,203,"二一一",32,32,&flag22);
-	        buttonhl(590,240,738,280,LB,DB,620,245,"双一流",32,32,&flag23);
+			buttonhl(590,177,738,219,LB,DB,620,182,"九八五",32,32,&flag21);
+         	buttonhl(590,240,738,282,LB,DB,620,245,"二一一",32,32,&flag22);
+	        buttonhl(590,303,738,345,LB,DB,620,308,"双一流",32,32,&flag23);
 
 		}
-		if (mouse_press(578,86,738,285)==0)
+		if (mouse_press(578,86,738,348)==0)
 		{
 			MouseS=0;
 			setfillstyle(1,NW);
-	        bar(590,156,738,282);//同上，清除菜单+-
+	        bar(590,177,738,345);//同上，清除菜单
 		}
 
 		if(press==2){
@@ -94,7 +93,7 @@ void main(void){
 	return 0;
 }
 
-/*最开始用的画出初始下拉菜单的俩函数，其实可以删了，有buttonh1替代了之前的功能*/
+/*画出两个下拉菜单的两个函数*/
 void xiala1(void){
 	setfillstyle(1,LB);
 	bar(390,177,538,219);
@@ -106,11 +105,11 @@ void xiala1(void){
 
 void xiala2(void){
 	setfillstyle(1,LB);
-	bar(590,156,738,198);
-	bar(590,198,738,240);
-	bar(590,240,738,280);
-	puthz(620,161,"九八五",32,32,DB);
-	puthz(620,203,"二一一",32,32,DB);
-	puthz(620,245,"双一流",32,32,DB);
+	bar(590,177,738,219);
+	bar(590,240,738,282);
+	bar(590,303,738,345);
+	puthz(620,182,"九八五",32,32,DB);
+	puthz(620,245,"二一一",32,32,DB);
+	puthz(620,308,"双一流",32,32,DB);
 	
 }
